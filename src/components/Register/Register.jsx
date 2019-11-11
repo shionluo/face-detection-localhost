@@ -33,7 +33,7 @@ const Register = ({ history, loadUser }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("http://localhost:3001/register", {
+    fetch("https://glacial-plateau-24606.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

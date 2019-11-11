@@ -43,7 +43,7 @@ const ImageLinkForm = ({
   };
 
   const handleSubmit = () => {
-    fetch("http://localhost:3001/imageurl", {
+    fetch("https://glacial-plateau-24606.herokuapp.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -53,7 +53,7 @@ const ImageLinkForm = ({
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch("http://localhost:3001/image", {
+          fetch("https://glacial-plateau-24606.herokuapp.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
