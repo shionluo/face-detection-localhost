@@ -28,7 +28,7 @@ const Signin = ({ history, loadUser }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch("https://glacial-plateau-24606.herokuapp.com/signin", {
+    fetch("http://localhost:3001/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

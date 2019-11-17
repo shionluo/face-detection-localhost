@@ -6,7 +6,6 @@ import Logo from "../Logo/Logo";
 import Info from "../Info/Info";
 import ImageLinkForm from "../Image-Link-Form/Image-Link-Form";
 import FaceDetection from "../Face-Detection/Face-Detection";
-import Boxes from "../Boxes/Boxes";
 
 //-------------------------------------------------------------//
 //-------------------------------------------------------------//
@@ -17,9 +16,7 @@ const Home = () => (
     <Logo />
     <Info />
     <ImageLinkForm />
-    <FaceDetection>
-      <Boxes />
-    </FaceDetection>
+    <FaceDetection />
   </div>
 );
 
