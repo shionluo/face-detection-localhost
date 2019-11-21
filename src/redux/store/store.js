@@ -4,6 +4,7 @@ import { createStore, combineReducers } from "redux";
 import { changeImageLinkReducer } from "../reducers/Change-Image-Link-Reducer";
 import { calculateBoxesReducer } from "../reducers/Calculate-Boxes-Reducer";
 import { loadUserReducer } from "../reducers/Load-User-Reducer";
+import { toggleModalReducer } from "../reducers/Toggle-Modal-Reducer";
 
 //-------------------------------------------------------------//
 //-------------------------------------------------------------//
@@ -11,7 +12,8 @@ import { loadUserReducer } from "../reducers/Load-User-Reducer";
 const rootReducer = combineReducers({
   changeImageLink: changeImageLinkReducer,
   calculaterBoxes: calculateBoxesReducer,
-  loadUser: loadUserReducer
+  loadUser: loadUserReducer,
+  toggleModal: toggleModalReducer
 });
 
 export const store = createStore(rootReducer);

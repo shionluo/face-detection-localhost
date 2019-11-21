@@ -2,3 +2,4 @@ export const CHANGE_IMAGE_LINK_FIELD = "CHANGE_IMAGE_LINK_FIELD";
 export const CALCULATE_BOXES = "CALCULATE_BOXES";
 export const RESET_BOXES = "RESET_BOXES";
 export const LOAD_USER = "LOAD_USER";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";

@@ -52,7 +52,7 @@ const Register = ({ history, loadUser }) => {
   };
 
   return (
-    <article className="mt6 tc br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center">
+    <article className="mt6 tc br3 ba b--black-10 w-50-m w-25-l mw6 shadow-5 center">
       <form className="pa4 black-80" onSubmit={handleSubmit}>
         <div className="measure">
           <fieldset id="sign-up" className="ba b--transparent ph0 mh0">
@@ -62,7 +62,7 @@ const Register = ({ history, loadUser }) => {
                 Name
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                 type="text"
                 name="name"
                 id="name"
@@ -74,7 +74,7 @@ const Register = ({ history, loadUser }) => {
                 Email
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                 type="email"
                 name="email-address"
                 id="email-address"
@@ -86,7 +86,7 @@ const Register = ({ history, loadUser }) => {
                 Password
               </label>
               <input
-                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                 type="password"
                 name="password"
                 id="password"

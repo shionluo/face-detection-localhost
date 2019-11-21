@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
 
-import "tachyons";
-
 //-- Service Worker --//
 import * as serviceWorker from "./serviceWorker";
 
@@ -15,6 +13,8 @@ import App from "./App";
 import { store } from "./redux/store/store";
 
 //-- Styles --//
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "tachyons";
 import "./index.css";
 
 //-------------------------------------------------------------//

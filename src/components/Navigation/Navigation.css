@@ -1,0 +1,9 @@
+.profile-nav .dropdown-menu-right {
+  right: 0 !important;
+}
+
+.profile-nav .dropdown-item:hover {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}

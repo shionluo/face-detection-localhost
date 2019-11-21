@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 
-import { connect } from "react-redux";
-
 import { Link } from "react-router-dom";
 
-//-- Actions --/
-import { loadUserAction } from "../../redux/actions/Load-User-Action";
-
 //-------------------------------------------------------------//
 //-------------------------------------------------------------//
 
-const mapDispatchToProps = dispatch => ({
-  loadUser: user => dispatch(loadUserAction(user))
-});
-
-const Signin = ({ history, loadUser }) => {
+const Signin = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPasword] = useState("");
 
@@ -24,6 +15,10 @@ const Signin = ({ history, loadUser }) => {
 
   const onPasswordChange = e => {
     setPasword(e.target.value);
+  };
+
+  const saveAuthTokenInSession = token => {
+    window.sessionStorage.setItem("token", token);
   };
 
   const handleSubmit = e => {
@@ -37,16 +32,16 @@ const Signin = ({ history, loadUser }) => {
       })
     })
       .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          loadUser(user);
+      .then(data => {
+        if (data.id && data.success) {
+          saveAuthTokenInSession(data.token);
           history.push("/home");
         }
       });
   };
 
   return (
-    <article className="tc br3 ba b--black-10 mt6 w-100 w-50-m w-25-l mw6 shadow-5 center">
+    <article className="tc br3 ba b--black-10 mt6 w-50-m w-25-l mw6 shadow-5 center">
       <form className="pa4 black-80" onSubmit={handleSubmit}>
         <div className="measure">
           <fieldset id="sign-up" className="ba b--transparent ph0 mh0">
@@ -56,7 +51,7 @@ const Signin = ({ history, loadUser }) => {
                 Email
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                 type="email"
                 name="email-address"
                 id="email-address"
@@ -68,7 +63,7 @@ const Signin = ({ history, loadUser }) => {
                 Password
               </label>
               <input
-                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
                 type="password"
                 name="password"
                 id="password"
@@ -94,7 +89,4 @@ const Signin = ({ history, loadUser }) => {
   );
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Signin);
+export default Signin;

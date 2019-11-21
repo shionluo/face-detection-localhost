@@ -1,8 +1,8 @@
 import React from "react";
 
-import Particles from "react-particles-js";
-
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Particles from "react-particles-js";
 
 //-- Components --//
 import Home from "./components/Home/Home";

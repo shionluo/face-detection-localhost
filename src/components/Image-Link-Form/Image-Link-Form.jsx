@@ -45,7 +45,10 @@ const ImageLinkForm = ({
   const handleSubmit = () => {
     fetch("http://localhost:3001/imageurl", {
       method: "post",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: window.sessionStorage.getItem("token")
+      },
       body: JSON.stringify({
         input: imageUrl
       })
@@ -55,7 +58,10 @@ const ImageLinkForm = ({
         if (response) {
           fetch("http://localhost:3001/image", {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: window.sessionStorage.getItem("token")
+            },
             body: JSON.stringify({
               id
             })
@@ -92,7 +98,4 @@ const ImageLinkForm = ({
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ImageLinkForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ImageLinkForm);
